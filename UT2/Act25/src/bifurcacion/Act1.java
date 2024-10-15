@@ -14,7 +14,12 @@ public class Act1 {
         
         if(number1 > number2) {
             System.out.println("La suma de los dos numeros es " + (number1+number2));
-            System.out.println("El producto de los dos numeros es ");
+            System.out.println("La diferencia de los dos numeros es " + (number1-number2));
+        } else if(number1 < number2) {
+            System.out.println("El producto de los dos numeros es " + (number1*number2));
+            System.out.println("La division  del primer numero respecto al segundo es " + (number1/number2));
+        } else {
+            System.out.println("Los dos numeros son iguales");
         }
     }
 }
