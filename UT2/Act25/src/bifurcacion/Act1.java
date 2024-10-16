@@ -2,6 +2,7 @@ package bifurcacion;
 
 import java.util.Scanner;
 
+
 public class Act1 {
     public static void main(String[] Args) {
         Scanner scanner = new Scanner(System.in);
