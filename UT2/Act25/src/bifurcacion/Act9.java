@@ -13,6 +13,14 @@ public class Act9{
         int number2 = scanner.nextInt();
         
         System.out.println("Inserta el producto");
+        int product = scanner.nextInt();
         
+        if(number1 * number2 == product){
+            System.out.println("correcto");
+        } else {
+            System.out.println("Error");
+            System.out.println("El producto de " + number1 + " y " + number2 + 
+                                " es " + (number1*number2));
+        }
     }
 }
