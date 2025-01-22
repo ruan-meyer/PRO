@@ -24,29 +24,39 @@ public class Main {
             switch(opt){
                 case 1:
                    accounts[numberAccounts] = createAccount();
+                   break;
                 case 2:
                     System.out.print("Enter your DNI: ");
                     String dni = sc.next();
-                    // IMPLEMENT WARN ABOUT INEXISTENT ACCOUNT
-                    for (int i = 0; i <= accounts.length; i++){
-                        if(dni.equals(accounts[i].getHolderDNI())){
-                            if(accounts[i].checkPin()){
-                                accountMenu(accounts[i]);
-                            } else {
-                                System.out.print("Wrong PIN, press 1 to try again or 2 to exit");
-                                int exit = sc.nextInt();
-                                while(exit == 1){
-                                    if(accounts[i].checkPin()){
-                                        accountMenu(accounts[i]);
-                                        break;
-                                    }
+                    for (int i = 0; i < accounts.length; i++){
+                        if(accounts[i] != null){
+                            if(dni.equals(accounts[i].getHolderDNI())){
+                                if(accounts[i].checkPin()){
+                                    accountMenu(accounts[i]);
+                                    break;
+                                } else {
                                     System.out.print("Wrong PIN, press 1 to try again or 2 to exit");
-                                    exit = sc.nextInt();
+                                    int exit = sc.nextInt();
+                                    while(exit == 1){
+                                        if(accounts[i].checkPin()){
+                                            accountMenu(accounts[i]);
+                                            break;
+                                        }
+                                        System.out.print("Wrong PIN, press 1 to try again or 2 to exit");
+                                        exit = sc.nextInt();
+                                    }
                                 }
                             }
                         }
+                        if(i == accounts.length - 1){
+                            System.out.println("Inexistent account");
+                            System.out.print("Press any key to move forward: ");
+                            sc.next();
+                        }
                     }
+                    break;
                 case 3:
+                    return;
             }
         }  
     }
@@ -105,6 +115,8 @@ public class Main {
                     Utils.clearScreen();
                     acc.changePin();
                     break;
+                case 6:
+                    return;
             }
             
             if(opt == 6){
