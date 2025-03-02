@@ -96,7 +96,7 @@ public class Main {
             switch(opt){
                 case 1:
                     Utils.clearScreen();
-                    System.out.print("Balance: " + acc.getBalance() + "\u20ac");
+                    System.out.print("Ba000lance: " + acc.getBalance() + "\u20ac");
                     System.out.println();
                     break;
                 case 2:
